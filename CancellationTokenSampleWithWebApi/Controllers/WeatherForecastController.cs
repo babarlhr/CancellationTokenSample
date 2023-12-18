@@ -68,6 +68,29 @@ public class WeatherForecastController : ControllerBase
         return Ok("DONE!!!");
     }
 
+    /// <summary>
+    ///Uncomment for not using cancellation token from HttpContext .Not recommended this approach is only for Demo
+    ///if we use this approach then we have to add this "CancellationToken cancellationToken"  parameter to all our end pints which is annoying.
+    ///we need one extra CancellationToken cancellationToken parameter for all APIs.
+    /// </summary>
+    /// <returns></returns>
+    //[HttpGet("with-request-cancellation")]
+    //public async Task<ActionResult> GetWithCancellationRequest(CancellationToken cancellationToken)
+    //{
+
+    //    // Cancels the task if the client closes the browser or refreshes the page.
+
+    //    await DoSomething(Random.Shared.Next(1, 1000), cancellationToken);
+
+    //    /*
+    //     Api
+    //        ->> Service
+    //            ->> Repository
+    //     */
+
+    //    return Ok("DONE!!!");
+    //}
+
 
     [HttpGet("with-ef-query-cancellation")]
     public async Task<ActionResult> GetWithCancellationQuert()
